@@ -1,17 +1,25 @@
-const {createApp} = Vue
+const { createApp } = Vue
 
 createApp({
-    data(){
-        return{
+    data() {
+        return {
+            mail: [
 
+            ]
         }
     },
     created(){
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(function(response){
-            console.log(response.data.response )
-        })
+        for(let i=0; i<10;i++){
+            this.call()
+        }
     },
     methods: {
-
+        call(){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then((response) =>{
+                console.log(response.data.response)
+                this.mail.push(response.data.response)
+            })
+        }
     }
 }).mount('#app')

@@ -10,6 +10,10 @@
 <body>
     
     <div id="app">
+        <ul>
+            <li v-for="(element, index) in mail" 
+            :key="index">{{element}}</li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -17,4 +21,4 @@
     <script src="./assets/main.js"></script>
 
 </body>
-</html>
+</html> 
